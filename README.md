@@ -1,81 +1,120 @@
-# Deadlock Simulator (JavaFX)
+# Deadlock Simulator 
 
-A desktop GUI that visualizes a deadlock scenario and walks through three
-resolution/prevention techniques:
+A JavaFX desktop application that demonstrates Operating System deadlock concepts through interactive visualizations. The simulator helps users understand how deadlocks occur, how resources are allocated, and how different deadlock prevention and recovery algorithms work.
 
-1. **Deadlock Scenario** — a resource allocation graph (P1, P2, P3, P4 vs
-   R1, R2, R3) with a circular wait highlighted in red, an allocation
-   table, and the four necessary conditions for deadlock.
-2. **Dynamic Priority Allocation** — step through priority assignment,
-   aging on contention, and scheduling by highest current priority.
-3. **Victim Selection** — weighted cost-to-abort scoring across the
-   deadlocked processes, then an animated resolution log after you click
-   "Run victim selection."
-4. **Wait-Die Scheme** — an interactive walkthrough of the WAIT vs DIE
-   rule across three timestamp-based request scenarios.
+---
 
-Use the four buttons in the header to switch screens.
+## Features
 
-## Requirements
+- Interactive Resource Allocation Graph (RAG)
+- Deadlock scenario visualization
+- Wait-Die deadlock prevention algorithm
+- Priority-based resource allocation
+- Victim selection for deadlock recovery
 
-- JDK 17 or newer
-- JavaFX SDK 21 (the project pulls JavaFX via Maven, so you don't need to
-  download the SDK separately if you use Maven)
-- Maven 3.6+
+---
 
-## Project layout
+## Technologies Used
 
-```
+- Java 17+
+- JavaFX 21
+- Maven
+- CSS
+- Object-Oriented Programming (OOP)
+
+---
+
+## Project Structure
+
+```text
 deadlock-sim/
-  pom.xml
-  src/main/java/com/deadlocksim/
-    DeadlockSimulatorApp.java     - entry point, header nav, scene swap
-    DeadlockScenario.java         - shared data model (processes/resources)
-    DeadlockScenePane.java        - Screen 1: resource allocation graph
-    PriorityAllocationPane.java   - Screen 2: dynamic priority allocation
-    VictimSelectionPane.java      - Screen 3: victim selection
-    WaitDiePane.java              - Screen 4: wait-die scheme
-    UiKit.java                    - shared styled UI helpers (cards, badges, etc.)
-  src/main/resources/
-    app.css                       - optional small stylesheet refinements
+│
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── deadlocksim/
+│   │   │           ├── DeadlockSimulatorApp.java
+│   │   │           ├── DeadlockScenePane.java
+│   │   │           ├── DeadlockScenario.java
+│   │   │           ├── PriorityAllocationPane.java
+│   │   │           ├── VictimSelectionPane.java
+│   │   │           ├── WaitDiePane.java
+│   │   │           └── UiKit.java
+│   │   │
+│   │   └── resources/
+│   │       └── app.css
+│   │
+│   └── test/
+│
+├── pom.xml
+├── README.md
+└── .gitignore
 ```
 
-## Run with Maven (recommended)
+---
 
-From the `deadlock-sim` directory:
+## Prerequisites
+
+Before running the application, install:
+
+- Java 17 or later
+- Maven 3.9 or later
+
+Verify the installation:
 
 ```bash
-mvn javafx:run
+java -version
+mvn -version
 ```
 
-This downloads the correct JavaFX modules for your OS automatically and
-launches the app — no manual SDK setup needed.
+---
 
-## Run without Maven (manual JavaFX SDK)
+## Installation
 
-If you'd rather not use Maven:
+Clone the repository:
 
-1. Download the JavaFX SDK 21 for your OS from https://openjfx.io
-2. Compile:
-   ```bash
-   javac --module-path /path/to/javafx-sdk-21/lib --add-modules javafx.controls \
-     -d out $(find src/main/java -name "*.java")
-   ```
-3. Run:
-   ```bash
-   java --module-path /path/to/javafx-sdk-21/lib --add-modules javafx.controls \
-     -cp out com.deadlocksim.DeadlockSimulatorApp
-   ```
+```bash
+git clone https://github.com/menahals/DeadlockSimulator.git
+```
 
-## Notes
+Navigate into the project directory:
 
-- The app is a single fixed scenario by design (P1→R2→P2→R3→P3→R1→P1
-  cycle, plus P4 blocked outside it) so all three techniques operate on
-  the same data and are easy to compare directly.
-- Dynamic Priority Allocation and Victim Selection are **detection and
-  recovery** techniques (the deadlock already happened; the system picks
-  who proceeds / who gets aborted). Wait-Die is a **prevention**
-  technique (the circular wait is never allowed to form in the first
-  place) — the UI calls this distinction out on the Wait-Die screen.
-- No external runtime dependencies beyond JavaFX itself — no database,
-  no network calls.
+```bash
+cd deadlock-sim
+```
+
+Run the application:
+
+```bash
+mvn clean javafx:run
+```
+
+---
+
+## Screenshots
+
+### Deadlock Scenario
+
+<img width="468" height="287" alt="image" src="https://github.com/user-attachments/assets/83125d1b-0e5f-449a-a1ab-ef9339f3274f" />
+<img width="468" height="74" alt="image" src="https://github.com/user-attachments/assets/4c7bc738-b20a-4dbd-9dbd-1d560573086c" />
+
+### Dynamic Priority Allocation
+
+<img width="468" height="152" alt="image" src="https://github.com/user-attachments/assets/1f6c1572-f02f-476c-8458-f317565f11ce" />
+<img width="468" height="153" alt="image" src="https://github.com/user-attachments/assets/199f7b84-6d2a-44a2-abea-3987a9a661c8" />
+<img width="468" height="175" alt="image" src="https://github.com/user-attachments/assets/c37c4687-953a-4475-bc12-e191cabe3b42" />
+
+
+### Wait-Die Algorithm
+
+<img width="468" height="218" alt="image" src="https://github.com/user-attachments/assets/4cfc7ccd-237c-457e-9521-31c08e7ead52" />
+<img width="468" height="216" alt="image" src="https://github.com/user-attachments/assets/fb677f5e-5bfa-4bc5-80cd-cb67058fbe8c" />
+<img width="468" height="236" alt="image" src="https://github.com/user-attachments/assets/3426d48e-6f44-421a-b926-cc11ca8603c3" />
+
+### Victim Selection
+
+<img width="468" height="159" alt="image" src="https://github.com/user-attachments/assets/a4201455-ee14-43f4-90a7-5501fe9443be" />
+<img width="468" height="228" alt="image" src="https://github.com/user-attachments/assets/01dd7c00-97f1-41e2-aaa4-0730e63f5e7b" />
+
+‼️Note: This project is shared for career-related purposes. If used for academic coursework, please follow your institution’s academic integrity policy.
