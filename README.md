@@ -117,4 +117,6 @@ mvn clean javafx:run
 <img width="468" height="159" alt="image" src="https://github.com/user-attachments/assets/a4201455-ee14-43f4-90a7-5501fe9443be" />
 <img width="468" height="228" alt="image" src="https://github.com/user-attachments/assets/01dd7c00-97f1-41e2-aaa4-0730e63f5e7b" />
 
+---
+
 ‼️Note: This project is shared for career-related purposes. If used for academic coursework, please follow your institution’s academic integrity policy.
