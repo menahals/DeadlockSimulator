@@ -70,21 +70,22 @@ mvn -version
 
 ---
 
-## Installation
+## 🚀 How to Run the Project
 
-Clone the repository:
+1. Clone the repository:  
+Open your terminal and run:
 
 ```bash
 git clone https://github.com/menahals/DeadlockSimulator.git
 ```
 
-Navigate into the project directory:
+2. Navigate to the project folder
 
 ```bash
 cd DeadlockSimulator
 ```
 
-Run the application:
+3. Run the application:
 
 ```bash
 mvn clean javafx:run
