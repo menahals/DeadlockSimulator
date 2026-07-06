@@ -74,6 +74,7 @@ mvn -version
 
 ### Using Terminal
 
+1. Clone the repository:
 ```bash
 git clone https://github.com/menahals/DeadlockSimulator.git
 ```
