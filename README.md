@@ -70,10 +70,9 @@ mvn -version
 
 ---
 
-## 🚀 How to Run the Project
+## 🚀 How to Run
 
-1. Clone the repository:  
-Open your terminal and run:
+### Using Terminal
 
 ```bash
 git clone https://github.com/menahals/DeadlockSimulator.git
