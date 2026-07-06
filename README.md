@@ -6,12 +6,9 @@ A JavaFX desktop application that demonstrates Operating System deadlock concept
 
 ## Features
 
-- Interactive Resource Allocation Graph (RAG)
-- Deadlock scenario visualization
-- Wait-Die deadlock prevention algorithm
-- Priority-based resource allocation
-- Victim selection for deadlock recovery
-
+- Visualization of processes and resource allocation
+- Demonstration of deadlock occurrence and causes
+- Implementation of deadlock prevention techniques
 ---
 
 ## Technologies Used
@@ -120,4 +117,4 @@ mvn clean javafx:run
 
 ---
 
-‼️Note: This project is shared for career-related purposes. If used for academic coursework, please follow your institution’s academic integrity policy.
+‼️Note: This project is shared for career and portfolio purposes only. Reuse, copying or submitting this work as your own, especially for academic credit is not permitted and may violate your institution’s academic integrity policies.
