@@ -81,7 +81,7 @@ git clone https://github.com/menahals/DeadlockSimulator.git
 Navigate into the project directory:
 
 ```bash
-cd deadlock-sim
+cd DeadlockSimulator
 ```
 
 Run the application:
